@@ -1,0 +1,453 @@
+$primary-color : #FFFFFF;
+$primary-font: "Montserrat";
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+.center {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+}
+
+.header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #E1FF8F;
+    height: 800px;
+    overflow: hidden;
+
+
+    &__title {
+        white-space: pre-line;
+        /* Если в html в блоке div задать построчную то данное свойство сохраяет html переносы */
+        color: #202027;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 64px;
+        margin-top: 196px;
+        z-index: 2;
+    }
+
+    &__button-btn {
+        font-family: $primary-font;
+        font-style: SemiBold;
+        font-weight: 600;
+        background: #202027;
+        border: 1px solid rgba(222, 215, 215, 0.41);
+        box-sizing: border-box;
+        border-radius: 20px;
+        width: 247px;
+        height: 66px;
+        margin-top: 8px;
+        font-size: 24px;
+        line-height: 18px;
+        color: #ffffff;
+        display: block;
+        transition: transform 0.2s ease, color 0.2s ease;
+
+    }
+
+    &__button-btn:hover {
+        transform: scale(1.12);
+    }
+
+    &__svg1 {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        z-index: 1;
+    }
+
+    &__svg2 {
+        position: absolute;
+        left: calc(100% * 0.063542);
+        top: 123px;
+    }
+
+    &__svg3 {
+        position: absolute;
+        left: calc(100% * 0.120486);
+        top: 69px;
+    }
+
+    &__svg4 {
+        position: absolute;
+        left: calc(100% * 0.7552);
+        top: 568px;
+    }
+
+    &__svg5 {
+        position: absolute;
+        left: calc(100% * 0.671181);
+        top: 538px;
+    }
+
+    &__lowribbon {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 90px;
+        background-color: #BCEC30;
+        overflow: hidden; // обязательно, чтобы обрезать дорожку
+        /* БОЛЬШЕ НИКАКИХ display: flex, align-items и т.п. */
+    }
+
+    &__lowribbon-track {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 51px; // твой отступ между элементами
+        height: 100%;
+        width: max-content; // растягивается под всё содержимое
+        flex-wrap: nowrap; // не переносить
+        animation: lowribbon-scroll 20s linear infinite;
+    }
+
+    &__lowribbon-track:hover {
+        animation-play-state: paused; // по желанию
+    }
+
+
+
+    &__lowribbon-text {
+        font-family: $primary-font;
+        white-space: nowrap;
+        font-style: Bold;
+        font-weight: 700;
+        font-size: 30px;
+    }
+}
+
+@keyframes lowribbon-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%); // половина ширины дорожки = один набор
+    }
+}
+
+.header__link {
+    white-space: nowrap;
+    text-decoration: none;
+    /* убираем подчёркивание по умолчанию */
+    color: #fff;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.Gamebox {
+    overflow: hidden;
+    background-color: #202027;
+    padding-top: 64px;
+    position: relative;
+}
+
+.Gamebox__heading {
+    font-family: $primary-font;
+    font-style: SemiBold;
+    font-weight: 600;
+    font-size: 48px;
+    color: #FFFFFF;
+}
+
+.Gamebox__description {
+    white-space: pre-line;
+    font-family: $primary-font;
+    font-style: Regular;
+    font-weight: 400;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.Gamebox__table {
+    margin-top: 72px;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.Gamebox__item {
+    height: 473px;
+    grid-column: span 4;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    z-index: 1;
+    transition: transform 0.2s ease, color 0.2s ease;
+
+}
+
+.Gamebox__item:hover {
+    transform: scale(1.12);
+
+}
+
+.Gamebox__itembig {
+    height: 512px;
+    grid-column: span 4;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    z-index: 1;
+    transition: transform 0.2s ease, color 0.2s ease;
+
+}
+
+.Gamebox__itembig:hover {
+    transform: scale(1.12);
+}
+
+.Gamebox__img {
+    width: 100%;
+}
+
+.Gamebox__text-box {
+    margin-left: 32px;
+    margin-top: 32px;
+    height: 36px;
+    width: 108px;
+    background-color: #f7f7f7;
+    border-radius: 53px;
+    display: flex;
+    align-items: center;
+    /* центрируем по вертикали */
+    justify-content: center;
+    /* центрируем по горизонтали */
+}
+
+.Gamebox__text1 {
+    margin-left: 48px;
+    margin-top: 32px;
+    font-family: $primary-font;
+    font-weight: 500;
+    font-size: 16px;
+    color: #202027;
+}
+
+.Gamebox__text2 {
+    margin-left: 32px;
+    margin-top: 16px;
+    white-space: pre-line;
+    line-height: 1.0;
+    /* Расстояние между строками*/
+    font-family: $primary-font;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 32px;
+    color: #202027;
+}
+
+.Gamebox__item_big {
+    grid-column: span 4;
+}
+
+.Gamebox__svgimg1 {
+    position: absolute;
+    left: calc(100% * 0.674);
+    top: 77px;
+    z-index: 0;
+}
+
+.Gamebox__svgimg2 {
+    position: absolute;
+    left: calc(100% * 0.9322);
+    top: 1380px;
+    z-index: 0;
+}
+
+
+.Gamebox__svgimg3 {
+    position: absolute;
+    left: calc(100% * 0.8989);
+    top: 1350px;
+    z-index: 0;
+}
+
+.Gamebox__svgimg4 {
+    position: absolute;
+    left: calc(100% * 0.8829);
+    bottom: 67px;
+    z-index: 0;
+}
+
+.Gamebox__svgimg5 {
+    position: absolute;
+    left: calc(100% * 0.9399);
+    bottom: 100px;
+    z-index: 0;
+}
+
+.Gamebox__svgimg6 {
+    position: absolute;
+    left: calc(100% * 0.028);
+    top: 786px;
+    z-index: 0;
+}
+
+.Gamebox__svgimg7 {
+    position: absolute;
+    left: calc(100% * 0.0468);
+    top: 850px;
+    z-index: 0;
+}
+
+
+.itemshift {
+    margin-top: -40px;
+}
+
+.textshift1 {
+    margin-top: 96px;
+}
+
+.PlayGame__table {
+    margin-top: 32px;
+    margin-bottom: 114px;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.PlayGame__item1 {
+    height: 500px;
+    grid-column: span 12;
+    background-color: #FFFFFF;
+    border-radius: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 2;
+
+}
+
+.PlayGame__item2 {
+    height: 500px;
+    grid-column: span 12;
+    background-color: #FFFFFF;
+    border-radius: 45px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+    align-items: flex-start;
+    z-index: 2;
+
+}
+
+.PlayGame__img {
+    width: auto;
+    height: 100%;
+}
+
+.PlayGame__text1 {
+    margin-left: 48px;
+    margin-top: 48px;
+    white-space: pre-line;
+    font-family: $primary-font;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 48px;
+    color: #202027;
+}
+
+
+.PlayGame__text2 {
+    margin-left: 48px;
+    margin-top: 48px;
+    white-space: pre-line;
+    font-family: $primary-font;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 24px;
+    color: #202027;
+}
+
+.PlayGame_img1 {
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.PlayGame__item-btn {
+    margin-top: 36px;
+}
+
+.PlayGame__btn {
+    margin-left: 48px;
+    font-family: $primary-font;
+    font-style: SemiBold;
+    background: #202027;
+    /*border: 1px solid rgba(222, 215, 215, 0.41);*/
+    box-sizing: border-box;
+    border-radius: 60px;
+    width: 247px;
+    height: 66px;
+    margin-top: 8px;
+    font-size: 24px;
+    line-height: 18px;
+    color: #ffffff;
+    display: block;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.PlayGame__btn:hover {
+    transform: scale(1.12);
+
+}
+
+.PlayGame__item-textbox {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    background-color: #BDED35;
+    font-family: $primary-font;
+    font-style: SemiBold;
+
+}
+
+.footer__title {
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 24px;
+    color: #000000;
+}
+
+.footer__text {
+    font-weight: 500;
+    font-size: 24px;
+    color: #000000;
+}
+
+
+
+@import 'table';
+@import 'mobile';
+
+// * {
+//     outline: 1px solid red;
+// }
