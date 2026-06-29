@@ -14,6 +14,7 @@ body {
 }
 
 .header {
+  font-family: "Montserrat";
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -38,6 +39,17 @@ body {
   z-index: 2;
 }
 
+.header__description {
+  white-space: pre-line;
+  /* Если в html в блоке div задать построчную то данное свойство сохраяет html переносы */
+  color: #202027;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 24px;
+  margin-top: 24px;
+  z-index: 2;
+}
+
 .header__button-btn {
   font-family: "Montserrat";
   font-style: SemiBold;
@@ -46,10 +58,10 @@ body {
   border: 1px solid rgba(222, 215, 215, 0.41);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 20px;
+  border-radius: 60px;
   width: 247px;
   height: 66px;
-  margin-top: 8px;
+  margin-top: 48px;
   font-size: 24px;
   line-height: 18px;
   color: #ffffff;
@@ -185,13 +197,14 @@ body {
 .Gamebox__heading {
   font-family: "Montserrat";
   font-style: SemiBold;
-  font-weight: 600;
-  font-size: 48px;
+  font-weight: 700;
+  font-size: 64px;
   color: #FFFFFF;
 }
 
 .Gamebox__description {
   white-space: pre-line;
+  margin-top: 24px;
   font-family: "Montserrat";
   font-style: Regular;
   font-weight: 400;
@@ -209,6 +222,7 @@ body {
 }
 
 .Gamebox__item {
+  position: relative;
   height: 473px;
   grid-column: span 4;
   background-color: #FFFFFF;
@@ -233,12 +247,17 @@ body {
   transition: transform 0.2s ease, color 0.2s ease, -webkit-transform 0.2s ease;
 }
 
+.Gamebox__item_height {
+  height: 512px;
+}
+
 .Gamebox__item:hover {
   -webkit-transform: scale(1.12);
           transform: scale(1.12);
 }
 
 .Gamebox__itembig {
+  position: relative;
   height: 512px;
   grid-column: span 4;
   background-color: #FFFFFF;
@@ -261,6 +280,10 @@ body {
   transition: color 0.2s ease, -webkit-transform 0.2s ease;
   transition: transform 0.2s ease, color 0.2s ease;
   transition: transform 0.2s ease, color 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.Gamebox__itembig_height {
+  height: 551px;
 }
 
 .Gamebox__itembig:hover {
@@ -312,6 +335,17 @@ body {
   font-style: Bold;
   font-size: 32px;
   color: #202027;
+}
+
+.Gamebox__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-indent: -9999px;
+  /* скрыть текст ссылки */
+  z-index: 1;
 }
 
 .Gamebox__item_big {
@@ -406,6 +440,12 @@ body {
   z-index: 2;
 }
 
+/* Масштабируем блок при переходе по ссылке*/
+.PlayGame__item1:target {
+  -webkit-animation: PlayGameItemPulse 3s ease-in-out forwards;
+          animation: PlayGameItemPulse 3s ease-in-out forwards;
+}
+
 .PlayGame__item2 {
   height: 500px;
   grid-column: span 12;
@@ -424,6 +464,58 @@ body {
       -ms-flex-align: start;
           align-items: flex-start;
   z-index: 2;
+}
+
+/* Масштабируем блок при переходе по ссылке*/
+.PlayGame__item2:target {
+  -webkit-animation: PlayGameItemPulse 3s ease-in-out forwards;
+          animation: PlayGameItemPulse 3s ease-in-out forwards;
+}
+
+/* Определяем ключевые кадры */
+@-webkit-keyframes PlayGameItemPulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  /* старт */
+  33% {
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
+  }
+  /* 1-е увеличение */
+  66% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  /* возврат */
+  100% {
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
+  }
+  /* 3-е увеличение — остаёмся */
+}
+@keyframes PlayGameItemPulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  /* старт */
+  33% {
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
+  }
+  /* 1-е увеличение */
+  66% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  /* возврат */
+  100% {
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
+  }
+  /* 3-е увеличение — остаёмся */
 }
 
 .PlayGame__img {
