@@ -37,6 +37,10 @@ body {
         z-index: 2;
     }
 
+    &__title_mob {
+        display: none;
+    }
+
     &__description {
         white-space: pre-line;
         /* Если в html в блоке div задать построчную то данное свойство сохраяет html переносы */
@@ -46,6 +50,10 @@ body {
         font-size: 24px;
         margin-top: 24px;
         z-index: 2;
+    }
+
+    &__description_mob {
+        display: none;
     }
 
     &__button-btn {
@@ -69,6 +77,8 @@ body {
 
     &__button-btn:hover {
         transform: scale(1.12);
+        color: #202027;
+        background: #FFFFFF
     }
 
     &__svg1 {
@@ -76,6 +86,10 @@ body {
         right: 0px;
         top: 0px;
         z-index: 1;
+    }
+
+    &__svg1-mob {
+        display: none;
     }
 
     &__svg2 {
@@ -137,6 +151,8 @@ body {
         font-weight: 700;
         font-size: 30px;
     }
+
+
 }
 
 @keyframes lowribbon-scroll {
@@ -359,6 +375,14 @@ body {
     grid-template-columns: repeat(12, 1fr);
 }
 
+.PlayGame__heading {
+    font-family: $primary-font;
+    font-style: SemiBold;
+    font-weight: 700;
+    font-size: 64px;
+    color: #FFFFFF;
+}
+
 .PlayGame__item1 {
     height: 500px;
     grid-column: span 12;
@@ -400,18 +424,22 @@ body {
     }
 
     /* старт */
-    33% {
+    25% {
         transform: scale(1.08);
     }
 
     /* 1-е увеличение */
-    66% {
+    50% {
         transform: scale(1);
+    }
+
+    75% {
+        transform: scale(1.08);
     }
 
     /* возврат */
     100% {
-        transform: scale(1.08);
+        transform: scale(1);
     }
 
     /* 3-е увеличение — остаёмся */
@@ -465,7 +493,6 @@ body {
     border-radius: 60px;
     width: 247px;
     height: 66px;
-    margin-top: 8px;
     font-size: 24px;
     line-height: 18px;
     color: #ffffff;
@@ -475,7 +502,8 @@ body {
 
 .PlayGame__btn:hover {
     transform: scale(1.12);
-
+    color: #202027;
+    background: #FFFFFF
 }
 
 .PlayGame__item-textbox {
