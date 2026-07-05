@@ -14,6 +14,11 @@ alert("Создателя языка  JavaScript звали " + JScreator);
 let a1 = 10;
 let a2 = 2;
 alert(`Сумма двух чисел равна = ${a1 + a2}`);
+alert(`Разность двух чисел равна = ${a1 - a2}`);
+alert(`Произведение двух чисел равна = ${a1 * a2}`);
+alert(`Частное двух чисел равна = ${a1 / a2}`);
+
+
 
 let result;
 result = Math.pow(2, 5)
@@ -31,3 +36,15 @@ num /= 3;
 num++;
 num--;
 alert("Результат = " + num);
+
+let age = prompt("Сколько вам лет?");
+alert("Вам " + age + " лет");
+
+let user = {
+    name: "Рустем",
+    age: 45,
+    isAdmin: true
+};
+
+let name = prompt("Как вас зовут?");
+alert(`Привет, ${name}!`);
