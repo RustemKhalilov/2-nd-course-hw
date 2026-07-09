@@ -39,7 +39,7 @@ body {
   z-index: 2;
 }
 
-.header__title_mob {
+.header__title-mob {
   display: none;
 }
 
@@ -54,7 +54,7 @@ body {
   z-index: 2;
 }
 
-.header__description_mob {
+.header__description-mob {
   display: none;
 }
 
@@ -423,7 +423,7 @@ body {
   margin-top: 96px;
 }
 
-.PlayGame__table {
+.PlayGame {
   margin-top: 32px;
   margin-bottom: 114px;
   display: -ms-grid;
@@ -433,7 +433,7 @@ body {
       grid-template-columns: repeat(12, 1fr);
 }
 
-.PlayGame__heading {
+.PlayGameheading {
   font-family: "Montserrat";
   font-style: SemiBold;
   font-weight: 700;
@@ -692,7 +692,7 @@ body {
   .header__description {
     display: none;
   }
-  .header__title_mob {
+  .header__title-mob {
     display: block;
     white-space: pre-line;
     /* Если в html в блоке div задать построчную то данное свойство сохраяет html переносы */
@@ -704,7 +704,7 @@ body {
     text-align: center;
     z-index: 2;
   }
-  .header__description_mob {
+  .header__description-mob {
     display: block;
     white-space: pre-line;
     /* Если в html в блоке div задать построчную то данное свойство сохраяет html переносы */
@@ -814,12 +814,7 @@ body {
   .Gamebox__svgimg7 {
     display: none;
   }
-  .PlayGame__heading {
-    font-style: Bold;
-    font-weight: 700;
-    font-size: 40px;
-  }
-  .PlayGame__table {
+  .PlayGame {
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
     gap: 0;
@@ -833,6 +828,9 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .PlayGame__item2 {
     height: 528px;
@@ -841,6 +839,9 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .PlayGame__img {
     width: 100%;
@@ -864,6 +865,11 @@ body {
   }
   .PlayGame__item-btn {
     margin-top: 32px;
+  }
+  .PlayGameheading {
+    font-style: Bold;
+    font-weight: 700;
+    font-size: 40px;
   }
   .mobileheight1 {
     height: 529px;
