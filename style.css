@@ -39,6 +39,10 @@ body {
   z-index: 2;
 }
 
+.header__title-mob {
+  display: none;
+}
+
 .header__description {
   white-space: pre-line;
   /* Если в html в блоке div задать построчную то данное свойство сохраяет html переносы */
@@ -48,6 +52,10 @@ body {
   font-size: 24px;
   margin-top: 24px;
   z-index: 2;
+}
+
+.header__description-mob {
+  display: none;
 }
 
 .header__button-btn {
@@ -75,6 +83,8 @@ body {
 .header__button-btn:hover {
   -webkit-transform: scale(1.12);
           transform: scale(1.12);
+  color: #202027;
+  background: #FFFFFF;
 }
 
 .header__svg1 {
@@ -82,6 +92,10 @@ body {
   right: 0px;
   top: 0px;
   z-index: 1;
+}
+
+.header__svg1-mob {
+  display: none;
 }
 
 .header__svg2 {
@@ -409,7 +423,7 @@ body {
   margin-top: 96px;
 }
 
-.PlayGame__table {
+.PlayGame {
   margin-top: 32px;
   margin-bottom: 114px;
   display: -ms-grid;
@@ -417,6 +431,14 @@ body {
   gap: 32px;
   -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr);
+}
+
+.PlayGameheading {
+  font-family: "Montserrat";
+  font-style: SemiBold;
+  font-weight: 700;
+  font-size: 64px;
+  color: #FFFFFF;
 }
 
 .PlayGame__item1 {
@@ -479,19 +501,23 @@ body {
             transform: scale(1);
   }
   /* старт */
-  33% {
+  25% {
     -webkit-transform: scale(1.08);
             transform: scale(1.08);
   }
   /* 1-е увеличение */
-  66% {
+  50% {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-  /* возврат */
-  100% {
+  75% {
     -webkit-transform: scale(1.08);
             transform: scale(1.08);
+  }
+  /* возврат */
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   /* 3-е увеличение — остаёмся */
 }
@@ -501,19 +527,23 @@ body {
             transform: scale(1);
   }
   /* старт */
-  33% {
+  25% {
     -webkit-transform: scale(1.08);
             transform: scale(1.08);
   }
   /* 1-е увеличение */
-  66% {
+  50% {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-  /* возврат */
-  100% {
+  75% {
     -webkit-transform: scale(1.08);
             transform: scale(1.08);
+  }
+  /* возврат */
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   /* 3-е увеличение — остаёмся */
 }
@@ -567,7 +597,6 @@ body {
   border-radius: 60px;
   width: 247px;
   height: 66px;
-  margin-top: 8px;
   font-size: 24px;
   line-height: 18px;
   color: #ffffff;
@@ -581,6 +610,8 @@ body {
 .PlayGame__btn:hover {
   -webkit-transform: scale(1.12);
           transform: scale(1.12);
+  color: #202027;
+  background: #FFFFFF;
 }
 
 .PlayGame__item-textbox {
@@ -627,64 +658,6 @@ body {
     padding-left: calc(50% - 786px/2);
     padding-right: calc(50% - 786px/2);
   }
-  .header__link {
-    padding: 0;
-  }
-  .hero__title {
-    width: 786px;
-  }
-  .for__item {
-    height: 268px;
-  }
-  .productpart__box {
-    -webkit-column-gap: 30px;
-            column-gap: 30px;
-    row-gap: 0;
-    row-gap: 30px;
-  }
-  .product {
-    grid-column: span 6;
-  }
-  .productpart__offers {
-    padding-top: 64px;
-  }
-  .footer {
-    margin-top: 68px;
-  }
-  .footer__title-box {
-    display: none;
-    width: 0;
-  }
-  .form__input {
-    width: 260px;
-  }
-  .form__btn {
-    width: 260px;
-  }
-  .form__text {
-    width: 260px;
-  }
-  /*Стили для корзины */
-  .cart {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
-    row-gap: 64px;
-  }
-  .cart__content {
-    grid-column: span 4;
-  }
-  .cart__number {
-    width: 51px;
-  }
-  .cart__form {
-    width: 378px;
-  }
-  .cart__form-orderbtn {
-    width: 338px;
-  }
-  .pageelementmob {
-    display: none;
-  }
 }
 
 @media (max-width: 833px) {
@@ -699,143 +672,9 @@ body {
     padding-left: 16px;
     padding-right: 16px;
   }
-  .hero {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    row-gap: 16px;
-  }
-  .hero__title {
-    width: 343px;
-    font-weight: 600;
-    font-size: 48px;
-    text-align: center;
-    margin-top: 29px;
-  }
-  .hero__textstyle {
-    font-weight: 400;
-    font-size: 16px;
-    text-align: center;
-  }
-  .hero__link {
-    font-weight: 400;
-    font-size: 14px;
-    text-align: center;
-  }
-  .hero__catalogtitle {
-    margin-top: 82px;
-  }
   .header {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    padding-top: 32px;
-  }
-  .header__input {
-    display: none;
-  }
-  .header__menu {
-    display: none;
-  }
-  .header__textstyle {
-    width: 99px;
-    font-size: 18px;
-  }
-  .menu-mob {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 33px;
-  }
-  .top__line {
-    display: none;
-  }
-  .top-catalog__line {
-    display: none;
-  }
-  .Gamebox {
-    padding-top: 32px;
-  }
-  .Gamebox__heading {
-    font-size: 24px;
-  }
-  .for {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
-  .for__item {
-    grid-column: 1 / -1;
-    height: 375px;
-  }
-  .for__item_big {
-    height: 244px;
-  }
-  .for__item__text {
-    font-size: 28px;
-  }
-  .select-css {
-    width: 164px;
-    font-size: 14px;
-  }
-  .select-type {
-    margin-top: 12px;
-    width: 203px;
-    font-size: 14px;
-  }
-  .productpart__offers {
-    font-size: 24px;
-    margin-top: 32px;
-  }
-  .productpart__box {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
-  .product__img {
-    height: 226px;
-  }
-  .product__name {
-    font-size: 18px;
-  }
-  .product__desc {
-    font-size: 14px;
-  }
-  .product__price {
-    font-size: 18px;
-  }
-  .product__discount {
-    font-size: 18px;
-  }
-  .product__cost {
-    font-size: 18px;
-  }
-  .product__offers {
-    margin-top: 32px;
-  }
-  .footer {
-    height: 400px;
-    margin-top: 36px;
-  }
-  .footer__title-box {
-    display: none;
-  }
-  .footer__content {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    gap: 69px;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    height: 364px;
-  }
-  .footer .form {
+    font-family: "Montserrat";
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -843,163 +682,257 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 8px;
+    background-color: #E1FF8F;
+    height: 700px;
+    overflow: hidden;
   }
-  .filtering-form {
-    height: 960px;
-  }
-  .filter-button-wrapper {
-    position: absolute;
-    /* top: 54px; */
-    right: -50px;
-    z-index: 10;
+  .header__title {
     display: none;
   }
-  .productpartcatalog {
-    margin-top: 39px;
+  .header__description {
+    display: none;
   }
-  .productpartcatalog__box {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+  .header__title-mob {
+    display: block;
+    white-space: pre-line;
+    /* Если в html в блоке div задать построчную то данное свойство сохраяет html переносы */
+    color: #202027;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 40px;
+    margin-top: 147px;
+    text-align: center;
+    z-index: 2;
   }
-  .productpartcatalog__filter {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: start;
-    gap: 10px;
+  .header__description-mob {
+    display: block;
+    white-space: pre-line;
+    /* Если в html в блоке div задать построчную то данное свойство сохраяет html переносы */
+    color: #202027;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    margin-top: 24px;
+    text-align: center;
+    z-index: 2;
   }
-  .productpartcatalog__links {
-    font-size: 14px;
-  }
-  .hero__catalogtitle {
-    font-size: 48px;
-  }
-  .productpartcatalog__filter-box {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: start;
-  }
-  .filtering-form__content-wrapper {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    /* оставляем одну колонку */
-  }
-  .room-type {
-    -ms-grid-column: 1;
-    grid-column: 1;
-    /* отменяем принудительную вторую колонку */
-    -ms-grid-row: 4;
-    grid-row: 4;
-    /* отменяем растягивание по строкам */
-    width: 100%;
-    /* блок занимает всю доступную ширину */
-    margin-top: 32px;
-  }
-  .room-type__button {
-    margin-top: 40px;
-    /* на мобильном делаем отступ меньше, чтобы не было огромной пустоты */
-  }
-  /*Стили для корзины */
-  .cart {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-    margin-top: 92px;
-    gap: 0;
-  }
-  .cart__content {
-    grid-column: span 2;
-  }
-  .cart__left {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .cart__buttonblock {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    gap: 14;
-    -ms-flex-line-pack: distribute;
-        align-content: space-around;
+  .header__button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .cart__img {
+  .header__button-btn {
+    border-radius: 60px;
+    width: 285px;
+    height: 55px;
+    margin-top: 36px;
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .header__svg1 {
     display: none;
   }
-  .cart__info {
-    max-width: 220px;
+  .header__lowribbon {
+    height: 51px;
   }
-  .cart__form {
+  .header__lowribbon-text {
+    font-style: Bold;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .header__lowribbon-svg {
+    width: 50%;
+    height: 50%;
+  }
+  .header__lowribbon-track {
+    gap: 27px;
+  }
+  .header__svg1 {
+    display: none;
+  }
+  .header__svg1-mob {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 1;
+  }
+  .header__svg2 {
+    width: 35px;
+    height: auto;
+  }
+  .header__svg3 {
+    width: 21px;
+    height: auto;
+  }
+  .header__svg4 {
+    width: 39px;
+    height: auto;
+    top: 588px;
+  }
+  .header__svg5 {
+    width: 18px;
+    height: auto;
+    top: 558px;
+  }
+  .Gamebox {
+    padding-top: 48px;
+  }
+  .Gamebox__heading {
+    display: none;
+  }
+  .Gamebox__description {
+    display: none;
+  }
+  .Gamebox__table {
+    display: none;
+  }
+  .Gamebox__svgimg1 {
+    display: none;
+  }
+  .Gamebox__svgimg1 {
+    display: none;
+  }
+  .Gamebox__svgimg2 {
+    display: none;
+  }
+  .Gamebox__svgimg3 {
+    display: none;
+  }
+  .Gamebox__svgimg4 {
+    display: none;
+  }
+  .Gamebox__svgimg5 {
+    display: none;
+  }
+  .Gamebox__svgimg6 {
+    display: none;
+  }
+  .Gamebox__svgimg7 {
+    display: none;
+  }
+  .PlayGame {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    row-gap: 24px;
+    margin-bottom: 10px;
+  }
+  .PlayGame__item1 {
+    height: 528px;
+    grid-column: 1 / -1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .PlayGame__item2 {
+    height: 528px;
+    grid-column: 1 / -1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .PlayGame__img {
+    width: 100%;
+    height: 285px;
+  }
+  .PlayGame__text1 {
+    margin-top: 29px;
+    margin-left: 29px;
+    font-size: 32px;
+  }
+  .PlayGame__text2 {
+    margin-top: 16px;
+    margin-left: 29px;
+    font-size: 16px;
+  }
+  .PlayGame__btn {
+    margin-left: 29px;
+    height: 55px;
+    width: 285px;
+    font-size: 16px;
+  }
+  .PlayGame__item-btn {
     margin-top: 32px;
-    width: 343px;
   }
-  .cart__form-btn1 {
-    width: 166px;
-    font-size: 12px;
+  .PlayGameheading {
+    font-style: Bold;
+    font-weight: 700;
+    font-size: 40px;
   }
-  .cart__form-btn2 {
-    width: 163px;
-    font-size: 12px;
+  .mobileheight1 {
+    height: 529px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
-  .cart__form-orderbtn {
-    width: 300px;
+  .mobileheight2 {
+    height: 568px;
   }
-  .cart__title {
-    font-size: 18px;
+  .mobileheight3 {
+    height: 568px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
-  .cart__cost {
-    font-size: 14px;
+  .mobileheight4 {
+    height: 607px;
   }
-  .cart__name-product {
-    display: none;
+  .mobileheight5 {
+    height: 568px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
-  .heading-big {
-    font-size: 48px;
-    text-align: center;
+  .mobileheight6 {
+    height: 627px;
   }
-  .productpart__pageelement {
-    margin-top: 0;
+  .mobiletex1aling {
+    width: 120px;
+    white-space: normal;
   }
-  .pageelement {
-    display: none;
+  .mobilealing {
+    width: 235px;
+    white-space: normal;
   }
-  .pageelementmob {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin-top: 32px;
+  .PlayGame__item1:hover {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
   }
-  .menu-mob__icon {
-    -webkit-transition: color 0.2s ease, -webkit-transform 0.2s ease;
-    transition: color 0.2s ease, -webkit-transform 0.2s ease;
-    transition: transform 0.2s ease, color 0.2s ease;
-    transition: transform 0.2s ease, color 0.2s ease, -webkit-transform 0.2s ease;
+  .PlayGame__item2:hover {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
   }
-  .menu-mob__icon:hover {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
+  .footer {
+    height: 100px;
+  }
+  .footer__text {
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
   }
 }
 /*# sourceMappingURL=style.css.map */

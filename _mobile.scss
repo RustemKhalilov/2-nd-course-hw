@@ -4,336 +4,296 @@
         padding-right: 16px;
     }
 
-    .hero {
-
+    .header {
+        font-family: $primary-font;
+        position: relative;
         display: flex;
-        align-items: center;
         flex-direction: column;
-        row-gap: 16px;
+        background-color: #E1FF8F;
+        height: 700px;
+        overflow: hidden;
+
 
         &__title {
-            width: 343px;
-            font-weight: 600;
-            font-size: 48px;
-            text-align: center;
-            margin-top: 29px;
+            display: none;
         }
 
-        &__textstyle {
+        &__description {
+            display: none;
+        }
+
+        &__title-mob {
+            display: block;
+            white-space: pre-line;
+            /* Если в html в блоке div задать построчную то данное свойство сохраяет html переносы */
+            color: #202027;
+            font-weight: 700;
+            font-style: Bold;
+            font-size: 40px;
+            margin-top: 147px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        &__description-mob {
+            display: block;
+            white-space: pre-line;
+            /* Если в html в блоке div задать построчную то данное свойство сохраяет html переносы */
+            color: #202027;
             font-weight: 400;
+            font-style: Regular;
             font-size: 16px;
+            margin-top: 24px;
             text-align: center;
+            z-index: 2;
         }
 
-        &__link {
-
-            font-weight: 400;
-            font-size: 14px;
-            text-align: center;
-
+        &__button {
+            display: flex;
+            justify-content: center;
         }
 
-        &__catalogtitle {
-            margin-top: 82px;
+        &__button-btn {
+            border-radius: 60px;
+            width: 285px;
+            height: 55px;
+            margin-top: 36px;
+            font-size: 16px;
+            line-height: 18px;
         }
-    }
 
-
-    .header {
-        justify-content: space-between;
-        padding-top: 32px;
-
-        &__input {
+        &__svg1 {
             display: none;
         }
 
-        &__menu {
+        &__lowribbon {
+            height: 51px;
+        }
+
+        &__lowribbon-text {
+            font-style: Bold;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        &__lowribbon-svg {
+            width: 50%;
+            height: 50%;
+        }
+
+        &__lowribbon-track {
+            gap: 27px;
+        }
+
+        &__svg1 {
             display: none;
         }
 
-        &__textstyle {
-            width: 99px;
-            font-size: 18px;
-
+        &__svg1-mob {
+            display: block;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            z-index: 1;
         }
-    }
 
-    .menu-mob {
-        display: flex;
-        gap: 33px;
+        &__svg2 {
+            width: 35px;
+            height: auto;
+        }
 
+        &__svg3 {
+            width: 21px;
+            height: auto;
+        }
 
-    }
+        &__svg4 {
+            width: 39px;
+            height: auto;
+            top: 588px;
+        }
 
-    .top__line {
-        display: none;
-    }
+        &__svg5 {
+            width: 18px;
+            height: auto;
+            top: 558px;
+        }
 
-    .top-catalog__line {
-        display: none;
     }
 
     .Gamebox {
-        padding-top: 32px;
-    }
+        padding-top: 48px;
 
-    .Gamebox__heading {
-        font-size: 24px;
-    }
-
-    .for {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-
-        &__item {
-            grid-column: 1 / -1;
-            height: 375px;
-        }
-
-        &__item_big {
-            height: 244px;
-        }
-
-        &__item__text {
-            font-size: 28px;
-        }
-    }
-
-    .select-css {
-
-        width: 164px;
-        font-size: 14px;
-    }
-
-    .select-type {
-        margin-top: 12px;
-        width: 203px;
-        font-size: 14px;
-    }
-
-    .productpart {
-        &__offers {
-            font-size: 24px;
-            margin-top: 32px;
-        }
-
-        &__box {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-        }
-    }
-
-    .product {
-
-        &__img {
-            height: 226px;
-        }
-
-        &__name {
-            font-size: 18px;
-        }
-
-        &__desc {
-            font-size: 14px;
-        }
-
-        &__price {
-            font-size: 18px;
-        }
-
-        &__discount {
-            font-size: 18px;
-        }
-
-        &__cost {
-            font-size: 18px;
-        }
-
-        &__offers {
-            margin-top: 32px;
-        }
-    }
-
-    .footer {
-
-        height: 400px;
-        margin-top: 36px;
-
-        &__title-box {
+        &__heading {
             display: none;
         }
 
-        &__content {
-            flex-wrap: wrap;
-            gap: 69px;
-            justify-content: space-around;
-            height: 364px;
+        &__description {
+            display: none;
         }
 
-        .form {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+        &__table {
+            display: none;
         }
+
+        &__svgimg1 {
+            display: none;
+        }
+
+        &__svgimg1 {
+            display: none;
+        }
+
+        &__svgimg2 {
+            display: none;
+        }
+
+        &__svgimg3 {
+            display: none;
+        }
+
+        &__svgimg4 {
+            display: none;
+        }
+
+        &__svgimg5 {
+            display: none;
+        }
+
+        &__svgimg6 {
+            display: none;
+        }
+
+        &__svgimg7 {
+            display: none;
+        }
+
     }
 
-    .filtering-form {
-        height: 960px;
-    }
-
-    .filter-button-wrapper {
-        position: absolute;
-        /* top: 54px; */
-        right: -50px;
-        z-index: 10;
-        display: none;
-    }
-
-    .productpartcatalog {
-        margin-top: 39px;
-    }
-
-
-    .productpartcatalog__box {
+    .PlayGame {
         grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-
-    }
-
-    .productpartcatalog__filter {
-        justify-content: space-between;
-        flex-direction: column;
-        align-items: start;
-        gap: 10px;
-
-    }
-
-    .productpartcatalog__links {
-        font-size: 14px;
-    }
-
-    .hero__catalogtitle {
-        font-size: 48px;
-    }
-
-    .productpartcatalog__filter-box {
-        justify-content: space-between;
-        flex-direction: column-reverse;
-        align-items: start;
-    }
-
-
-
-
-    .filtering-form__content-wrapper {
-        grid-template-columns: 1fr;
-        /* оставляем одну колонку */
-    }
-
-    .room-type {
-        grid-column: 1;
-        /* отменяем принудительную вторую колонку */
-        grid-row: 4;
-        /* отменяем растягивание по строкам */
-        width: 100%;
-        /* блок занимает всю доступную ширину */
-        margin-top: 32px;
-    }
-
-    .room-type__button {
-        margin-top: 40px;
-        /* на мобильном делаем отступ меньше, чтобы не было огромной пустоты */
-    }
-
-    /*Стили для корзины */
-    .cart {
-        grid-template-columns: repeat(2, 1fr);
-        margin-top: 92px;
         gap: 0;
+        row-gap: 24px;
+        margin-bottom: 10px;
+
+        &__item1 {
+            height: 528px;
+            grid-column: 1 / -1;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        &__item2 {
+            height: 528px;
+            grid-column: 1 / -1;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__img {
+            width: 100%;
+            height: 285px;
+        }
+
+        &__text1 {
+            margin-top: 29px;
+            margin-left: 29px;
+            font-size: 32px;
+
+        }
+
+        &__text2 {
+            margin-top: 16px;
+            margin-left: 29px;
+            font-size: 16px;
+        }
+
+        &__btn {
+            margin-left: 29px;
+            height: 55px;
+            width: 285px;
+            font-size: 16px;
+        }
+
+        &__item-btn {
+            margin-top: 32px;
+        }
+
     }
 
-    .cart__content {
-        grid-column: span 2;
-    }
-
-    .cart__left {
-        flex-direction: column;
-    }
-
-    .cart__buttonblock {
-        flex-direction: row;
-        gap: 14;
-        align-content: space-around;
-        justify-content: center;
+    .PlayGameheading {
+        font-style: Bold;
+        font-weight: 700;
+        font-size: 40px;
 
     }
 
-    .cart__img {
-        display: none;
+    .mobileheight1 {
+        height: 529px;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+
     }
 
-    .cart__info {
-        max-width: 220px;
+    .mobileheight2 {
+        height: 568px;
+
     }
 
-    .cart__form {
-        margin-top: 32px;
-        width: 343px;
+    .mobileheight3 {
+        height: 568px;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+
     }
 
-    .cart__form-btn1 {
-        width: 166px;
-        font-size: 12px;
+    .mobileheight4 {
+        height: 607px;
     }
 
-    .cart__form-btn2 {
-        width: 163px;
-        font-size: 12px;
+    .mobileheight5 {
+        height: 568px;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+
     }
 
-    .cart__form-orderbtn {
-        width: 300px;
+    .mobileheight6 {
+        height: 627px;
+
     }
 
-    .cart__title {
-        font-size: 18px;
+    .mobiletex1aling {
+        width: 120px;
+        white-space: normal;
     }
 
-    .cart__cost {
-        font-size: 14px;
+    .mobilealing {
+        width: 235px;
+        white-space: normal;
     }
 
-    .cart__name-product {
-        display: none;
+    .PlayGame__item1:hover {
+        transform: scale(1.03);
+
     }
 
-    .heading-big {
-        font-size: 48px;
-        text-align: center;
+    .PlayGame__item2:hover {
+        transform: scale(1.03);
+
     }
 
-
-    .productpart__pageelement {
-        margin-top: 0;
+    .footer {
+        height: 100px;
     }
 
-    .pageelement {
-        display: none;
+    .footer__text {
+        font-weight: 600;
+        font-size: 16px;
+        color: #000000;
     }
 
-    .pageelementmob {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 32px;
-    }
-
-    .menu-mob__icon {
-        transition: transform 0.2s ease, color 0.2s ease;
-    }
-
-    .menu-mob__icon:hover {
-        transform: scale(1.3);
-    }
 
 
 }
