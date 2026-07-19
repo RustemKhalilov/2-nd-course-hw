@@ -1,16 +1,20 @@
+document.getElementById('goButton').addEventListener('click', () => {
+    document.getElementById('Game1').scrollIntoView({ behavior: 'smooth' });
+});
+
 /*Задание №1*/
 
-for (let i=0; i < 2; i++) {
+for (let i = 0; i < 2; i++) {
     console.log("Привет");
 }
 
 /*Задание №2*/
-for (let i=1; i <= 5; i++) {
+for (let i = 1; i <= 5; i++) {
     console.log(i);
 }
 
 /*Задание №3*/
-for (let i=7; i <= 22; i++) {
+for (let i = 7; i <= 22; i++) {
     console.log(i);
 }
 
@@ -22,7 +26,7 @@ let obj = {
 };
 
 for (let key in obj) {
-   console.log(`${key} - ${obj[key]} долларов`);
+    console.log(`${key} - ${obj[key]} долларов`);
 }
 
 /*Задание №5*/
