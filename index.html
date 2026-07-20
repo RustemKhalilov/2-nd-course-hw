@@ -11,11 +11,198 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 </head>
-<div class="header__button">
-    <button class="header__button-btn" id="goPlayGame" onclick="startQuiz()">Играть в викторину</button>
-</div>
 
 <body>
+    <header class="header center">
+        <div class="header__title">Добро пожаловать
+            на мой сайт мини-игр
+        </div>
+        <div class="header__title-mob">Добро
+            пожаловать
+            на мой сайт
+            мини-игр
+        </div>
+        <div class="header__description">
+            Тебе предстоить пройти несколько увлекательных игр.
+            Если готов, нажимай <strong>«Поехали!»</strong> и <strong>приступай.</strong>
+        </div>
+        <div class="header__description-mob">
+            Тебе предстоить пройти несколько
+            увлекательных игр. Если готов,
+            нажимай <strong>«Поехали!»</strong> и <strong>приступай.</strong>
+        </div>
+        <div class="header__button">
+            <button class="header__button-btn" id="goButton">Поехали</button>
+        </div>
+        <img class="header__svg1" src="img/header/Group_1597880565.svg" alt="Продукт">
+        <img class="header__svg1-mob" src="img/header/Group_2.svg" alt="Продукт">
+        <img class="header__svg2" src="img/header/Star_2.svg" alt="Продукт">
+        <img class="header__svg3" src="img/header/Star_3.svg" alt="Продукт">
+        <img class="header__svg4" src="img/header/Star_4.svg" alt="Продукт">
+        <img class="header__svg5" src="img/header/Star_5.svg" alt="Продукт">
+        <div class="header__lowribbon">
+            <div class="header__lowribbon-track">
+                <p class="header__lowribbon-text">ВИКТОРИНА</p>
+                <img class="header__lowribbon-svg" src="img/header/Star.svg" alt="Продукт">
+                <p class="header__lowribbon-text">УГАДАЙ ЧИСЛО</p>
+                <img class="header__lowribbon-svg" src="img/header/Star.svg" alt="Продукт">
+                <p class="header__lowribbon-text">ПЕРЕВЕРНИ ТЕКСТ</p>
+                <img class="header__lowribbon-svg" src="img/header/Star.svg" alt="Продукт">
+                <p class="header__lowribbon-text">ПРОСТАЯ АРКАДА</p>
+
+                <!-- Дублируем для плавности (если не дублировать – будет рывок) -->
+                <p class="header__lowribbon-text">ВИКТОРИНА</p>
+                <img class="header__lowribbon-svg" src="img/header/Star.svg" alt="Продукт">
+                <p class="header__lowribbon-text">УГАДАЙ ЧИСЛО</p>
+                <img class="header__lowribbon-svg" src="img/header/Star.svg" alt="Продукт">
+                <p class="header__lowribbon-text">ПЕРЕВЕРНИ ТЕКСТ</p>
+                <img class="header__lowribbon-svg" src="img/header/Star.svg" alt="Продукт">
+                <p class="header__lowribbon-text">ПРОСТАЯ АРКАДА</p>
+            </div>
+        </div>
+    </header>
+    <section class="Gamebox center">
+        <h1 class="Gamebox__heading">Об играх</h1>
+        <h2 class="Gamebox__description">В моей коллекции представлено 6 игр на разные темы.
+            Игры несложные — в них может поиграть каждый.
+            Все игры доступны для пользования.</h2>
+        <img src="img/content/Star_13.svg" alt="" class="Gamebox__svgimg1">
+        <img src="img/content/Star_15.svg" alt="" class="Gamebox__svgimg2">
+        <img src="img/content/Star_14.svg" alt="" class="Gamebox__svgimg3">
+        <img src="img/content/Star_16.svg" alt="" class="Gamebox__svgimg4">
+        <img src="img/content/Star_17.svg" alt="" class="Gamebox__svgimg5">
+        <img src="img/content/Star_18.svg" alt="" class="Gamebox__svgimg6">
+        <img src="img/content/Star_19.svg" alt="" class="Gamebox__svgimg7">
+        <div class="Gamebox__table">
+            <div class="Gamebox__item">
+                <img src="img/content/Gamebox_item1.png" alt="" class="Gamebox__img">
+                <div class="Gamebox__text-box">Игра №1</div>
+                <h3 class="Gamebox__text2">Угадай число</h3>
+                <a href="#Game1" class="Gamebox__link">Перейти</a>
+            </div>
+            <div class="Gamebox__itembig">
+                <img src="img/content/Gamebox_item2.png" alt="" class="Gamebox__img">
+                <div class="Gamebox__text-box">Игра №2</div>
+                <h3 class="Gamebox__text2">Простая
+                    арифметика</h3>
+                <a href="#Game2" class="Gamebox__link">Перейти</a>
+            </div>
+            <div class="Gamebox__item">
+                <img src="img/content/Gamebox_item3.png" alt="" class="Gamebox__img">
+                <div class="Gamebox__text-box">Игра №3</div>
+                <h3 class="Gamebox__text2">Переверни текст</h3>
+                <a href="#Game3" class="Gamebox__link">Перейти</a>
+            </div>
+            <div class="Gamebox__itembig Gamebox__itembig_height itemshift">
+                <img src="img/content/Gamebox_item4.png" alt="" class="Gamebox__img">
+                <div class="Gamebox__text-box">Игра №4</div>
+                <h3 class="Gamebox__text2">Камень,
+                    ножницы,
+                    бумага</h3>
+                <a href="#Game4" class="Gamebox__link">Перейти</a>
+            </div>
+            <div class="Gamebox__item Gamebox__item_height">
+                <img src="img/content/Gamebox_item5.png" alt="" class="Gamebox__img">
+                <div class="Gamebox__text-box">Игра №5</div>
+                <h3 class="Gamebox__text2">Простая
+                    викторина</h3>
+                <a href="#Game5" class="Gamebox__link">Перейти</a>
+            </div>
+            <div class="Gamebox__itembig Gamebox__itembig_height itemshift">
+                <img src="img/content/Gamebox_item6.png" alt="" class="Gamebox__img">
+                <div class="Gamebox__text-box">Игра №6</div>
+                <h3 class="Gamebox__text2">Генаратор
+                    случайных
+                    чисел</h3>
+                <a href="#Game6" class="Gamebox__link">Перейти</a>
+            </div>
+        </div>
+        <h2 class="PlayGameheading">Мини-игры</h2>
+        <div class="PlayGame">
+            <div class="PlayGame__item1 mobileheight1" id="Game1">
+                <div class="PlayGame__item-textbox">
+                    <h3 class="PlayGame__text1">Угадай число</h3>
+                    <h3 class="PlayGame__text2">Попробуй угадай случайное число
+                        от 1 до 100.</h3>
+                    <div class="PlayGame__item-btn">
+                        <button class="PlayGame__btn" onclick="startQuiz()">Играть!</button>
+                    </div>
+                </div>
+                <img src="img/content/Gamebox_item1.png" alt="" class="PlayGame__img">
+            </div>
+            <div class="PlayGame__item2 mobileheight2" id="Game2">
+                <img src="img/content/Gamebox_item2.png" alt="" class="PlayGame__img">
+                <div class="PlayGame__item-textbox boxshift1">
+                    <h3 class="PlayGame__text1">Простая
+                        арифметика
+                    </h3>
+                    <h3 class="PlayGame__text2">Попробуй решить простые
+                        арифметические задачи.
+                    </h3>
+                    <div class="PlayGame__item-btn">
+                        <button class="PlayGame__btn">Играть!</button>
+                    </div>
+                </div>
+            </div>
+            <div class="PlayGame__item1 mobileheight3" id="Game3">
+                <div class="PlayGame__item-textbox">
+                    <h3 class="PlayGame__text1 mobiletex1aling">Переверни текст</h3>
+                    <h3 class="PlayGame__text2">Попробуй ввести текст, который
+                        будет перевернут.</h3>
+                    <div class="PlayGame__item-btn">
+                        <button class="PlayGame__btn">Играть!</button>
+                    </div>
+                </div>
+                <img src="img/content/Gamebox_item3.png" alt="" class="PlayGame__img">
+            </div>
+            <div class="PlayGame__item2 mobileheight4" id="Game4">
+                <img src="img/content/Gamebox_item4.png" alt="" class="PlayGame__img">
+                <div class="PlayGame__item-textbox boxshift1">
+                    <h3 class="PlayGame__text1">Камень,
+                        ножницы,
+                        бумага.
+                    </h3>
+                    <h3 class="PlayGame__text2">Сыграй в популярную игру
+                        против компьютера.
+                    </h3>
+                    <div class="PlayGame__item-btn">
+                        <button class="PlayGame__btn">Играть!</button>
+                    </div>
+                </div>
+            </div>
+            <div class="PlayGame__item1 mobileheight5" id="Game5">
+                <div class="PlayGame__item-textbox">
+                    <h3 class="PlayGame__text1">Простая викторина</h3>
+                    <h3 class="PlayGame__text2">Отвечай на вопросы викторины
+                        с вариантами ответов.</h3>
+                    <div class="PlayGame__item-btn">
+                        <button class="PlayGame__btn">Играть!</button>
+                    </div>
+                </div>
+                <img src="img/content/Gamebox_item5.png" alt="" class="PlayGame__img">
+            </div>
+            <div class="PlayGame__item2 mobileheight6" id="Game6">
+                <img src="img/content/Gamebox_item6.png" alt="" class="PlayGame__img">
+                <div class="PlayGame__item-textbox">
+                    <h3 class="PlayGame__text1">Генератор
+                        случайных
+                        цветов.
+                    </h3>
+                    <h3 class="PlayGame__text2 mobilealing">Игра в котороый при клике на кнопочку
+                        фон страницы меняется на случайный.
+                    </h3>
+                    <div class="PlayGame__item-btn">
+                        <button class="PlayGame__btn">Играть!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__title">
+            <h3 class="footer__text">Все права защищены</h3>
+        </div>
+    </footer>
     <script src="hw-6.js"> </script>
 </body>
 
