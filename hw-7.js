@@ -37,99 +37,150 @@ function guessNumber() {
     let idguess = false
 
     while (idguess === false) {
-        let input = prompt('Введите число от 1 до 100, для выхода введите -1111:');
+        let input = prompt('Введите число от 1 до 100 (для выхода нажмите Отмена):');
         let num = Number(input);
 
-        if (num === number) {
+        if (input === null) {
+            // Нажата «Отмена» (или Esc)
+            console.log('Отмена');
+            idguess = true
+        } else if (input.trim() === '') {
+            // Нажат «ОК» при пустом поле (или введены только пробелы)
+            alert('Ответ не был введен!!!');
+            idguess = true
+
+        } else if (isNaN(num)) {
+            // Не удалось преобразовать в число → текстовый ввод
+            alert('Введён текст, а не число попробуйте снова');
+
+        } else if (num < 1 || num > 100) {
+            // Это число, дальше можно проверять диапазон
+            console.log('Введено число:', num);
+            alert('Число вне диапазона 1–100 попробуйте еще раз');
+
+        } else if (num === number) {
             alert('Правильно, ты угдал!!')
             idguess = true
-        }
 
-        else if (num === -1111) {
-            alert('До новых встреч!!!')
-            idguess = true
-        }
-
-        else if (num < number) {
+        } else if (num < number) {
             alert('Зададанное число больше')
         }
         else if (num > number) {
             alert('Зададанное число меньше')
         }
 
-
     }
 
 }
 
 function simpleArithmetic() {
-    let Idprocess = Math.floor(Math.random() * 4) + 1; // Генерируем число от 1 до 4 случайное
-    let firstNumber = Math.floor(Math.random() * 20) + 1; // Генерируем число от 1 до 20 случайное
-    let secondNumber = Math.floor(Math.random() * 20) + 1; // Генерируем число от 1 до 20 случайное
+    let Idprocess = Math.floor(Math.random() * 4) + 1;   // 1-4
+    let firstNumber = Math.floor(Math.random() * 20) + 1; // 1-20
+    let secondNumber;
 
-    if (Idprocess === 1) {
-        let userAnswer = Number(prompt(`${firstNumber} + ${secondNumber} =`));
-        let Answer = firstNumber + secondNumber
-        if (userAnswer === Answer) {
-            alert('Правильно')
-        }
-        else {
-            alert(`Не правильно, правильный ответ ${Answer}`)
-        }
-
-    }
-    else if (Idprocess === 2) {
-        let userAnswer = Number(prompt(`${firstNumber} - ${secondNumber} =`));
-        let Answer = firstNumber - secondNumber
-        if (userAnswer === Answer) {
-            alert('Правильно')
-        }
-        else {
-            alert(`Не правильно, правильный ответ ${Answer}`)
-        }
+    // Для деления генерируем второй операнд иначе (допускаем 0)
+    if (Idprocess === 4) {
+        secondNumber = Math.floor(Math.random() * 21);    // 0-20
+    } else {
+        secondNumber = Math.floor(Math.random() * 20) + 1; // 1-20
     }
 
-    else if (Idprocess === 3) {
-        let userAnswer = Number(prompt(`${firstNumber} * ${secondNumber} =`));
-        let Answer = firstNumber * secondNumber
-        if (userAnswer === Answer) {
-            alert('Правильно')
-        }
-        else {
-            alert(`Не правильно, правильный ответ ${Answer}`)
+    // Знак операции и правильный ответ определим заранее
+    let operator, correctAnswer;
+    switch (Idprocess) {
+        case 1:
+            operator = '+';
+            correctAnswer = firstNumber + secondNumber;
+            break;
+        case 2:
+            operator = '-';
+            correctAnswer = firstNumber - secondNumber;
+            break;
+        case 3:
+            operator = '*';
+            correctAnswer = firstNumber * secondNumber;
+            break;
+        case 4:
+            operator = '/';
+            // Для деления корректный ответ – число или строка "бесконечность"
+            correctAnswer = secondNumber === 0 ? 'бесконечность' : firstNumber / secondNumber;
+            break;
+    }
+
+    // Запрашиваем ответ как строку, не преобразуя сразу
+    const userInput = prompt(`${firstNumber} ${operator} ${secondNumber} =`);
+
+    // 1. Отмена
+    if (userInput === null) {
+        console.log('Отмена');
+        return;
+    }
+
+    // 2. Пустой ввод (только пробелы)
+    if (userInput.trim() === '') {
+        alert('Ответ не был введен!!!');
+        return;
+    }
+
+    // 3. Преобразуем в число (кроме случая деления на 0, где ждём строку)
+    let userAnswer;
+    if (Idprocess === 4 && secondNumber === 0) {
+        // Ожидаем строку "бесконечность"
+        userAnswer = userInput.trim();
+    } else {
+        userAnswer = Number(userInput);
+        // Дополнительно: если пользователь ввёл не число, Number даст NaN
+        if (isNaN(userAnswer)) {
+            alert('Введите число!');
+            return;
         }
     }
 
-    else if (Idprocess === 4) {
-        // Для деления secondNumber может быть 0, чтобы сработала проверка
-        secondNumber = Math.floor(Math.random() * 21); // 0-20
-        let userAnswer = prompt(`${firstNumber} / ${secondNumber} =`); // не Number, чтобы принять "бесконечность"
-        let Answer;
+    // 4. Сравнение с учётом особенностей деления
+    let isCorrect = false;
 
+    if (Idprocess === 4) {
+        // Деление
         if (secondNumber === 0) {
-            Answer = "бесконечность";
+            // Сравниваем строки без учёта регистра и лишних пробелов
+            isCorrect = userAnswer.toLowerCase() === 'бесконечность';
         } else {
-            Answer = firstNumber / secondNumber;
-            userAnswer = Number(userAnswer); // если не 0, то преобразуем в число
+            // Сравнение дробных чисел с небольшой погрешностью
+            isCorrect = Math.abs(userAnswer - correctAnswer) < 0.0001;
         }
+    } else {
+        // Сложение, вычитание, умножение – точное сравнение целых чисел
+        isCorrect = userAnswer === correctAnswer;
+    }
 
-        if (userAnswer === Answer) {
-            alert('Правильно');
-        } else {
-            alert(`Не правильно, правильный ответ ${Answer}`);
-        }
+    // 5. Вывод результата
+    if (isCorrect) {
+        alert('Правильно');
+    } else {
+        alert(`Не правильно, правильный ответ ${correctAnswer}`);
     }
 }
 
 function gameReverseText() {
-    let input = prompt('Введите текст:');
-    alert(`Перевернутый текст: ${input.split('').reverse().join('')}`);
+    let input = prompt('Введите текст (для выхода нажмите Отмена):');
+    if (input === null) {
+        // Нажата «Отмена» (или Esc)
+        console.log('Отмена');
+        return;
 
+    } else if (input.trim() === '') {
+        // Нажат «ОК» при пустом поле (или введены только пробелы)
+        alert('Ответ не был введен!!!');
+        return;
+
+    } else {
+        alert(`Перевернутый текст: ${input.split('').reverse().join('')}`);
+    }
 }
 
 /*Задание №1*/
 let simpleText = "ПроТивоЯдие12"
-console.log(simpleText.toLowerCase())
+console.log(simpleText.toUpperCase())
 
 /*Задание №2*/
 const words = ['Apple', 'application', 'Banana', 'apricot', 'Avocado', 'grape'];
@@ -151,14 +202,15 @@ console.log(result);
 let number = 32.58884
 console.log(Math.floor(number));
 console.log(Math.ceil(number));
+console.log(Math.round(number));
 
 /*Задание №4*/
 
 let numberArr = [52, 53, 49, 77, 21, 32]
-let sortArr = numberArr.sort((a, b) => a - b)
+/*  let sortArr = numberArr.sort((a, b) => a - b) */
 
-console.log('Первый (мин):', sortArr[0]);
-console.log('Последний (макс):', sortArr[sortArr.length - 1]);
+console.log('Минимальное значение:', Math.min(...numberArr));
+console.log('Максимально значение:', Math.max(...numberArr));
 
 /*Задание №5*/
 
