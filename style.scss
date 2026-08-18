@@ -447,7 +447,7 @@ body {
 }
 
 .PlayGame__img {
-    width: auto;
+    max-width: 600px;
     height: 100%;
 }
 
@@ -510,6 +510,7 @@ body {
 .PlayGame__item-textbox {
     display: flex;
     flex-direction: column;
+    max-width: 247px;
 
 }
 

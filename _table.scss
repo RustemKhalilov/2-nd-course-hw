@@ -1,16 +1,16 @@
-@media (max-width: 1024px) {
+@media (max-width: 1440px) {
     .center {
-        padding-left: calc(50% - 786px/2);
-        padding-right: calc(50% - 786px/2);
+        padding-left: calc(50% - 1200px/2);
+        padding-right: calc(50% - 1200px/2);
         ;
     }
 }
 
-@media (max-width: 833px) {
-    .center {
-        padding-left: 24px;
-        padding-right: 24px;
-        ;
-    }
+// @media (max-width: 833px) {
+//     .center {
+//         padding-left: 24px;
+//         padding-right: 24px;
+//         ;
+//     }
 
-}
+// }

@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 876px) {
     .center {
         padding-left: 16px;
         padding-right: 16px;
@@ -210,14 +210,18 @@
         }
 
         &__btn {
-            margin-left: 29px;
+            margin-left: 0px;
             height: 55px;
-            width: 285px;
+            max-width: 285px;
             font-size: 16px;
         }
 
         &__item-btn {
             margin-top: 32px;
+        }
+
+        &__item-textbox {
+            max-width: 267px;
         }
 
     }

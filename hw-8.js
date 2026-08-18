@@ -22,19 +22,25 @@ function startQuiz() {
         }
     ];
     let userCorrectAnswerCount = 0;
-    for (let i = 0; i <= quiz.length - 1; i++) {
-        let userAnswer = prompt(`Вопрос № ${i + 1} ${quiz[i].question} \n ${quiz[i].options}`);
-        let correctAnswer = quiz[i].options[quiz[i].correctAnswer - 1].split(". ")
-        if (userAnswer === correctAnswer[0] || userAnswer === correctAnswer[1]) {
-            userCorrectAnswerCount++
+    for (let i = 0; i < quiz.length; i++) {
+        const question = quiz[i];
+        const userAnswer = prompt(`Вопрос № ${i + 1}: ${question.question}\n\n${question.options.join('\n')}`);
+        if (userAnswer === null) continue; // Отмена / Esc — пропускаем вопрос
+        const answer = userAnswer.trim().toLowerCase();
+        const correctOption = question.options[question.correctAnswer - 1]; // например "2. Синий"
+        const correctParts = correctOption.split('. ');
+        const correctNumber = correctParts[0];           // "2"
+        const correctName = correctParts[1] ? correctParts[1].toLowerCase() : ''; // "синий"
+        if (answer === correctNumber || answer === correctName || answer === correctOption.toLowerCase()) {
+            userCorrectAnswerCount++;
         }
     }
-    alert(`Правильных ответов: - ${userCorrectAnswerCount}`)
+    alert(`Правильных ответов: ${userCorrectAnswerCount} из ${quiz.length}`);
 }
 
 /*Игра Угадай число*/
 function guessNumber() {
-    let number = Math.floor(Math.random() * 100)
+    let number = Math.floor(Math.random() * 100) + 1; // диапазон 1-100
     let idguess = false
 
     while (idguess === false) {
@@ -60,14 +66,14 @@ function guessNumber() {
             alert('Число вне диапазона 1–100 попробуйте еще раз');
 
         } else if (num === number) {
-            alert('Правильно, ты угдал!!')
+            alert('Правильно, ты угадал!!')
             idguess = true
 
         } else if (num < number) {
-            alert('Зададанное число больше')
+            alert('Загаданное число больше')
         }
         else if (num > number) {
-            alert('Зададанное число меньше')
+            alert('Загаданное число меньше')
         }
 
     }
@@ -247,93 +253,15 @@ function gameRockScissorsPaper() {
 
 }
 
-/*Задание №1*/
-let people = [
-    { name: 'Глеб', age: 29 },
-    { name: 'Анна', age: 17 },
-    { name: 'Олег', age: 7 },
-    { name: 'Оксана', age: 47 }
-];
-
-console.log(people.sort((item1, item2) => item1.age - item2.age));
-
-/*Задание №2*/
-
-function isPositive(number) {
-    // писать код тут
-    return number > 0;
+/*Игра Генератор случайных цветов*/
+function randomColorBackground() {
+    // Тёмные оттенки, чтобы белый текст на странице оставался читаемым
+    const red = Math.floor(Math.random() * 128);
+    const green = Math.floor(Math.random() * 128);
+    const blue = Math.floor(Math.random() * 128);
+    const randomColor = `rgb(${red}, ${green}, ${blue})`;
+    // Меняем фон секции с играми на случайный цвет
+    document.querySelector('.Gamebox').style.backgroundColor = randomColor;
 }
-function isMale(person) {
-    // писать код тут
-    return person.gender === 'male';
-}
-function filter(array, ruleFunction) {
-    // писать код тут
-    const result = [];               // массив для отфильтрованных элементов
-    for (let i = 0; i < array.length; i++) {
-        if (ruleFunction(array[i])) {  // если правило выполняется
-            result.push(array[i]);       // добавляем элемент в результат
-        }
-    }
-    return result;
-}
-
-console.log(filter([3, -4, 1, 9], isPositive));
-
-people = [
-    { name: 'Глеб', gender: 'male' },
-    { name: 'Анна', gender: 'female' },
-    { name: 'Олег', gender: 'male' },
-    { name: 'Оксана', gender: 'female' }
-];
-
-console.log(filter(people, isMale));
-
-/*Задание №3*/
-
-let count = 0;
-const intervalId = setInterval(() => {
-    const now = new Date();
-    console.log(now.toString()); // или любой формат
-    count++;
-    if (count === 10) {
-        clearInterval(intervalId); // очищаем заданый setInterval по 3000 мс
-        console.log('30 секунд прошло');
-    }
-}, 3000);
-
-
-
-/*Задание №4*/
-
-function delayForSecond(callback) {
-    // Код писать можно только внутри этой функции
-    setTimeout(callback, 1000);
-}
-
-delayForSecond(function () {
-    console.log('Привет, Глеб!');
-})
-
-/*Задание №5*/
-
-// Функция delayForSecond через 1 секунду пишет в консоль 
-// «Прошла одна секунда», а затем вызывает переданный колбэк
-function delayForSecond(cb) {
-    setTimeout(() => {
-        console.log('Прошла одна секунда');
-        if (cb) { cb(); }
-    }, 1000)
-}
-
-// Функция sayHi выводит в консоль приветствие для указанного имени
-function sayHi(name) {
-    console.log(`Привет, ${name}!`);
-}
-
-// Код выше менять нельзя
-
-// Нужно изменить код ниже:
-delayForSecond(() => sayHi('Глеб'));
 
 
