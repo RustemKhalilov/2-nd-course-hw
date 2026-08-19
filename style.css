@@ -550,7 +550,7 @@ body {
 }
 
 .PlayGame__img {
-  max-width: 600px;
+  max-width: 50%;
   height: 100%;
 }
 
@@ -623,7 +623,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 247px;
+  max-width: 400px;
 }
 
 .footer {
